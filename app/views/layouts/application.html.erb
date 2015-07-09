@@ -55,13 +55,14 @@
     </head>
     <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
         <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-          <%= render 'layouts/header' %>
           <main class="mdl-layout__content">
+            <%= render 'layouts/header' %>
             <div class="mdl-layout__tab-panel is-active" id="overview">
                 <%= yield %>
             </div>
             <%= render 'layouts/footer' %>
           </main>
+
         </div>
     <%= javascript_include_tag 'material.min' %>
   </body>
