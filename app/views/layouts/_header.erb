@@ -8,27 +8,29 @@
   <div class="mdl-layout--large-screen-only mdl-layout__header-row">
   </div>
   <div class="mdl-layout--large-screen-only mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
-    <a href="/" class="mdl-layout__tab is-active">Home</a>
-    <a href="#" class="mdl-layout__tab">Events</a>
-    <a href="#" class="mdl-layout__tab">Materials</a>
-    <a href="#" class="mdl-layout__tab">Packages</a>
-    <a href="#" class="mdl-layout__tab">Workflows</a>
-    <a href="#" class="mdl-layout__tab">Content Providers</a>
-    <a href="#" class="mdl-layout__tab">Nodes</a>
-    <a href="#" class="mdl-layout__tab">About</a>
-
+    <nav class="mdl-navigation">
+        <%= link_to('Home', root_path, {:class => 'mdl-layout__tab is-active'}) %>
+        <a href="#" class="mdl-layout__tab">Events</a>
+        <a href="#" class="mdl-layout__tab">Materials</a>
+        <a href="#" class="mdl-layout__tab">Packages</a>
+        <a href="#" class="mdl-layout__tab">Workflows</a>
+        <a href="#" class="mdl-layout__tab">Content Providers</a>
+        <a href="#" class="mdl-layout__tab">Nodes</a>
+        <%= link_to('About', static_pages_about_path, {:class => 'mdl-layout__tab'}) %>
+    </nav>
   </div>
 </header>
 <div class="mdl-layout__drawer">
   <span class="mdl-layout-title">TeSS</span>
   <nav class="mdl-navigation">
-    <a href="<%= root_path %>" class="mdl-navigation__link">Home</a>
+    <%= link_to('Home', root_path, {:class => 'mdl-navigation__link'}) %>
     <a href="#" class="mdl-navigation__link">Events</a>
     <a href="#" class="mdl-navigation__link">Materials</a>
     <a href="#" class="mdl-navigation__link">Packages</a>
     <a href="#" class="mdl-navigation__link">Workflows</a>
     <a href="#" class="mdl-navigation__link">Content Providers</a>
     <a href="#" class="mdl-navigation__link">Nodes</a>
-    <a href="#" class="mdl-navigation__link">About</a>
+    <%= link_to('About', static_pages_about_path, {:class => 'mdl-navigation__link'}) %>
   </nav>
 </div>
+
