@@ -1,0 +1,45 @@
+<section class="section--center mdl-grid  mdl-shadow--1dp">
+<div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card__supporting-text">
+    <h4>Sign Up</h4>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
+
+      <div class="field">
+        <%= f.label :name %><br />
+        <%= f.text_field :name, autofocus: true %>
+      </div>
+
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password %>
+        <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "off" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Sign up" %>
+      </div>
+
+  <% end %>
+
+  <%= render "devise/shared/links" %>
+
+  </div>
+  <div class="mdl-card__actions">
+    <a href="/" class="mdl-button">Cancel</a>
+  </div>
+</div>
+</section>

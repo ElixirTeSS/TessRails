@@ -9,6 +9,7 @@ gem 'turbolinks'
 gem 'jbuilder'
 gem 'sdoc'
 gem 'minitest-reporters'
+gem 'devise'
 
 group :development, :test do
   gem 'sqlite3'

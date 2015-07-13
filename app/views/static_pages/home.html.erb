@@ -34,16 +34,30 @@
     <i class="material-icons">more_vert</i>
   </button>
   <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn3">
-    <li class="mdl-menu__item">Log In</li>
-    <li class="mdl-menu__item">Create Account</li>
+    <% if user_signed_in? %>
+        <li class="mdl-menu__item">
+          <%= link_to('Logout', destroy_user_session_path, {:method => :delete, :class => 'mdl-navigation__link'}) %>
+        </li>
+    <% else %>
+        <li class="mdl-menu__item">
+          <%= link_to('Login', new_user_session_path, :class => 'mdl-navigation__link')  %>
+        </li>
+        <li class="mdl-menu__item">
+          <%= link_to('Register', new_user_registration_path, :class => 'mdl-navigation__link')  %>
+        </li>
+    <% end %>
     <li class="mdl-menu__item" disabled>Suggest design changes</li>
   </ul>
 </section>
 
 <section class="section--center mdl-grid  mdl-shadow--1dp">
 
-  <div class="mdl-card mdl-cell mdl-cell--12-col">
-    <div class="mdl-card__supporting-text">
+  <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
+    <img src="<%= image_path '/images/frontpage/elixir_training.jpg' %>" alt="Image of an exciting training event" class="mdl-shadow-2dp">
+  </header>
+  <!-- <div class="mdl-card mdl-cell mdl-cell--12-col"> -->
+  <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+  <div class="mdl-card__supporting-text">
       <h4>Events</h4>
       Discover the latest training events and news from ELIXIR nodes and 3<sup>rd</sup> party providers.
     </div>
@@ -52,7 +66,7 @@
     </div>
   </div>
 
-  <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
     <div class="mdl-card__supporting-text">
       <h4>Materials</h4>
       Browse the catalogue of materials offered by ELIXIR nodes and 3<sup>rd</sup> party providers.
@@ -61,8 +75,14 @@
       <a href="/materials" class="mdl-button">View Materials</a>
     </div>
   </div>
+  <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
+    <img src="<%= image_path '/images/frontpage/library.jpg' %>" alt="Old school telnet library interface" class="mdl-shadow-2dp">
+  </header>
 
-  <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
+    <img src="<%= image_path '/images/frontpage/package.jpg' %>" alt="Image of a package obtained from: https://www.flickr.com/photos/mom2sofia/8394217408" class="mdl-shadow-2dp">
+  </header>
+  <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
     <div class="mdl-card__supporting-text">
       <h4>Packages</h4>
       Create training packages by grouping resources that address your particular research topic.
@@ -72,7 +92,7 @@
     </div>
   </div>
 
-  <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
     <div class="mdl-card__supporting-text">
       <h4>Workflows</h4>
       Visualise ‘workflows’ to identify resources specific to your research and training needs.
@@ -81,8 +101,14 @@
       <a href="/workflows" class="mdl-button">View Workflows</a>
     </div>
   </div>
+  <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
+    <img src="<%= image_path '/images/frontpage/workflow.jpg' %>" alt="Fragment of a workflow" class="mdl-shadow-2dp">
+  </header>
 
-  <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
+    <img src="<%= image_path '/images/frontpage/bees.jpg' %>" alt="Some bees, busily buzzing to bring you content" class="mdl-shadow-2dp">
+  </header>
+  <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
     <div class="mdl-card__supporting-text">
       <h4>Content Providers</h4>
       Browse content providers and follow links to their associated training materials.

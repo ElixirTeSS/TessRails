@@ -13,3 +13,28 @@
  *= require_tree .
  *= require_self
  */
+
+/*
+Need to add decent notice and alert classes here, perhaps using some of these cards?
+http://www.getmdl.io/components/index.html#cards-section
+*/
+
+/*
+success, info, warning, and danger)
+*/
+
+.alert-success {
+    color: green;
+}
+
+.alert-info {
+    color: blue;
+}
+
+.alert-warning {
+    color: blue;
+}
+
+.alert-danger {
+    color: blue;
+}

@@ -49,6 +49,7 @@
   -->
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= stylesheet_link_tag 'material.min', media: 'all' %>
   <%= stylesheet_link_tag 'styles', media: 'all' %>
   <%= javascript_include_tag 'material.min' %>
@@ -82,7 +83,7 @@
 
 <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
 <!-- Uses a transparent header that draws on top of the layout's background -->
-<div class="layout-transparent mdl-layout mdl-js-layout">
+<div class="layout-transparent mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header mdl-layout__header--primary mdl-layout__header--scroll">
     <div class="mdl-layout__header-row">
       <!-- Title -->
@@ -91,7 +92,7 @@
       <!-- Add spacer, to align navigation to the right -->
       <div class="mdl-layout-spacer"></div>
       <!-- Navigation -->
-      <nav class="mdl-navigation mdl-layout--large-screen-only">
+      <nav class="mdl-navigation">
         <%= link_to('Home', root_path, {:class => 'mdl-navigation__link'}) %>
         <a href="#" class="mdl-navigation__link">Events</a>
         <%= link_to('Materials', materials_path, {:class => 'mdl-navigation__link'}) %>
@@ -119,10 +120,18 @@
     </nav>
   </div>
   <main class="mdl-layout__content">
+
     <div class="mdl-layout-spacer">
         <br/>
     </div>
+
+    <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+        <div class="mdl-layout-spacer"><br/></div>
+    <% end %>
+
     <%= yield %>
+
   </main>
   <footer class="mdl-mega-footer">
     <div class="mdl-mega-footer--middle-section">
