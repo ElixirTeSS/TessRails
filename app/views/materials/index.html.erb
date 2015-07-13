@@ -1,0 +1,38 @@
+<% provide(:title, "Materials") %>
+<p id="notice"><%= notice %></p>
+
+<section class="section--center mdl-grid  mdl-shadow--1dp">
+  <div class="mdl-card mdl-cell mdl-cell--12-col">
+
+<h1>Listing Materials</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Url</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @materials.each do |material| %>
+      <tr>
+        <td><%= material.url %></td>
+        <td><%= material.title %></td>
+        <td><%= material.description %></td>
+        <td><%= link_to 'Show', material %></td>
+        <td><%= link_to 'Edit', edit_material_path(material) %></td>
+        <td><%= link_to 'Destroy', material, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Material', new_material_path %>
+
+    </div>
+</section>

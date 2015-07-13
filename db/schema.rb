@@ -11,7 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150708102454) do
+ActiveRecord::Schema.define(version: 20150713085958) do
+
+  create_table "content_providers", force: :cascade do |t|
+    t.text     "title"
+    t.text     "name"
+    t.text     "description"
+    t.text     "image_url"
+    t.text     "homepage"
+    t.integer  "node_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "materials", force: :cascade do |t|
+    t.text     "url"
+    t.text     "title"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "microposts", force: :cascade do |t|
     t.text     "content"

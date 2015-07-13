@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @content_provider.title %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @content_provider.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @content_provider.description %>
+</p>
+
+<p>
+  <strong>Image url:</strong>
+  <%= @content_provider.image_url %>
+</p>
+
+<p>
+  <strong>Homepage:</strong>
+  <%= @content_provider.homepage %>
+</p>
+
+<p>
+  <strong>Node:</strong>
+  <%= @content_provider.node_id %>
+</p>
+
+<%= link_to 'Edit', edit_content_provider_path(@content_provider) %> |
+<%= link_to 'Back', content_providers_path %>

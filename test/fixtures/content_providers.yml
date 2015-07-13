@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: 
+  name: 
+  description: 
+  image_url: 
+  homepage: 
+  node_id: 1
+
+two:
+  title: 
+  name: 
+  description: 
+  image_url: 
+  homepage: 
+  node_id: 1
