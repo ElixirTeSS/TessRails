@@ -72,6 +72,10 @@
            your background is light. */
         color: #333333;
     }
+    .mdl-layout__header-row {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
   </style>
 
 </head>
@@ -87,7 +91,7 @@
       <!-- Add spacer, to align navigation to the right -->
       <div class="mdl-layout-spacer"></div>
       <!-- Navigation -->
-      <nav class="mdl-navigation">
+      <nav class="mdl-navigation mdl-layout--large-screen-only">
         <%= link_to('Home', root_path, {:class => 'mdl-navigation__link'}) %>
         <a href="#" class="mdl-navigation__link">Events</a>
         <%= link_to('Materials', materials_path, {:class => 'mdl-navigation__link'}) %>
@@ -97,6 +101,8 @@
         <a href="#" class="mdl-navigation__link">Nodes</a>
         <%= link_to('About', static_pages_about_path, {:class => 'mdl-navigation__link'}) %>
       </nav>
+    </div>
+    <div class="mdl-layout--large-screen-only mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark mdl-js-ripple-effect--ignore-events">
     </div>
   </header>
   <div class="mdl-layout__drawer">

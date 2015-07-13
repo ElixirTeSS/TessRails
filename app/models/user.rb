@@ -13,4 +13,7 @@ class User < ActiveRecord::Base
     "#{@name} <#{@email}>"
   end
 
+  # Need to add this:
+  # http://www.tonyamoyal.com/2010/07/28/rails-authentication-with-devise-and-cancan-customizing-devise-controllers/
+
 end
