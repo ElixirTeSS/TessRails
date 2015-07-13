@@ -16,23 +16,46 @@
   limitations under the License
 -->
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <% if :title %>
-            <title><%= full_title(yield(:title)) %></title>
-        <% else %>
-            <title>TeSS - Training e-Support Service</title>
-        <% end %>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <%= stylesheet_link_tag 'material.min', media: 'all' %>
-        <%= stylesheet_link_tag 'styles', media: 'all' %>
-        <style>
-        #view-source {
+  <% if :title %>
+    <title><%= full_title(yield(:title)) %></title>
+  <% else %>
+    <title>TeSS - Training e-Support Service</title>
+  <% end %>
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Material Design Lite">
+  <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
+
+  <!-- Tile icon for Win8 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+  <meta name="msapplication-TileColor" content="#3372DF">
+
+  <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+  <!--
+  <link rel="canonical" href="http://www.example.com/">
+  -->
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet">
+  <%= stylesheet_link_tag 'material.min', media: 'all' %>
+  <%= stylesheet_link_tag 'styles', media: 'all' %>
+  <%= javascript_include_tag 'material.min' %>
+
+  <style>
+      #view-source {
           position: fixed;
           display: block;
           right: 0;
@@ -40,30 +63,89 @@
           margin-right: 40px;
           margin-bottom: 40px;
           z-index: 900;
-        }
-        </style>
+      }
+    .layout-transparent {
+        background: url(<%= image_path '/images/hunstanton.jpg' %>) center / cover;
+    }
+    .layout-transparent .mdl-layout__header, .mdl-navigation__link,
+    .layout-transparent .mdl-layout__drawer-button {
+        /* This background is dark, so we set text to white. Use 87% black instead if
+           your background is light. */
+        color: #333333;
+    }
+  </style>
 
-        <% if :title %>
-            <title><%= full_title(yield(:title)) %></title>
-        <% else %>
-            <title>TeSS - Training e-Support Service</title>
-        <% end %>
-        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-        <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-        <%= favicon_link_tag 'favicon.ico' %>
-        <%= csrf_meta_tags %>
-    </head>
-    <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
-        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-          <main class="mdl-layout__content">
-            <%= render 'layouts/header' %>
-            <div class="mdl-layout__tab-panel is-active" id="overview">
-                <%= yield %>
-            </div>
-            <%= render 'layouts/footer' %>
-          </main>
+</head>
 
-        </div>
-    <%= javascript_include_tag 'material.min' %>
-  </body>
+<body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
+<!-- Uses a transparent header that draws on top of the layout's background -->
+<div class="layout-transparent mdl-layout mdl-js-layout">
+  <header class="mdl-layout__header mdl-layout__header--primary mdl-layout__header--scroll">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <%= link_to image_tag('ELIXIR_TeSS_logo_white-small-6.png', alt: "ELIXIR TeSS Logo"), '/' %>
+      <span class="mdl-layout-title">ELIXIR TeSS &mdash; Training e-Support Service</span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation -->
+      <nav class="mdl-navigation">
+        <%= link_to('Home', root_path, {:class => 'mdl-navigation__link'}) %>
+        <a href="#" class="mdl-navigation__link">Events</a>
+        <a href="#" class="mdl-navigation__link">Materials</a>
+        <a href="#" class="mdl-navigation__link">Packages</a>
+        <a href="#" class="mdl-navigation__link">Workflows</a>
+        <a href="#" class="mdl-navigation__link">Content Providers</a>
+        <a href="#" class="mdl-navigation__link">Nodes</a>
+        <%= link_to('About', static_pages_about_path, {:class => 'mdl-navigation__link'}) %>
+      </nav>
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">TeSS</span>
+    <nav class="mdl-navigation">
+      <%= link_to('Home', root_path, {:class => 'mdl-navigation__link'}) %>
+      <a href="#" class="mdl-navigation__link">Events</a>
+      <a href="#" class="mdl-navigation__link">Materials</a>
+      <a href="#" class="mdl-navigation__link">Packages</a>
+      <a href="#" class="mdl-navigation__link">Workflows</a>
+      <a href="#" class="mdl-navigation__link">Content Providers</a>
+      <a href="#" class="mdl-navigation__link">Nodes</a>
+      <%= link_to('About', static_pages_about_path, {:class => 'mdl-navigation__link'}) %>
+    </nav>
+  </div>
+  <main class="mdl-layout__content">
+    <div class="mdl-layout-spacer">
+        <br/>
+    </div>
+    <%= yield %>
+  </main>
+  <footer class="mdl-mega-footer">
+    <div class="mdl-mega-footer--middle-section">
+      <div class="mdl-mega-footer--drop-down-section">
+        <input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
+        <h1 class="mdl-mega-footer--heading">FAQ</h1>
+        <ul class="mdl-mega-footer--link-list">
+          <li><a href="#">Questions</a></li>
+          <li><a href="#">Answers</a></li>
+          <li><a href="#">Contact us</a></li>
+          <li>
+            <%= link_to('About', static_pages_about_path) %>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="mdl-mega-footer--bottom-section">
+      <div class="mdl-logo">
+        More Information
+      </div>
+      <ul class="mdl-mega-footer--link-list">
+        <li><a href="#">Help</a></li>
+        <li><a href="#">Privacy and Terms</a></li>
+        <li><a href="https://www.flickr.com/photos/squeezyboy/4783544414/" target="_blank">Background image</a></li>
+      </ul>
+    </div>
+  </footer>
+</div>
+</body>
 </html>
+
