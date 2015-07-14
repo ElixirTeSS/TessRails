@@ -103,8 +103,10 @@
         <%= link_to('About', static_pages_about_path, {:class => 'mdl-navigation__link'}) %>
       </nav>
     </div>
+
     <div class="mdl-layout--large-screen-only mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark mdl-js-ripple-effect--ignore-events">
     </div>
+
   </header>
   <div class="mdl-layout__drawer">
     <span class="mdl-layout-title">TeSS</span>
@@ -132,33 +134,37 @@
 
     <%= yield %>
 
+
+      <footer class="mdl-mega-footer">
+        <div class="mdl-mega-footer--middle-section">
+          <div class="mdl-mega-footer--drop-down-section">
+            <input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
+            <h1 class="mdl-mega-footer--heading">FAQ</h1>
+            <ul class="mdl-mega-footer--link-list">
+              <li><a href="#">Questions</a></li>
+              <li><a href="#">Answers</a></li>
+              <li><a href="#">Contact us</a></li>
+              <li>
+                <%= link_to('About', static_pages_about_path) %>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="mdl-mega-footer--bottom-section">
+          <div class="mdl-logo">
+            More Information
+          </div>
+          <ul class="mdl-mega-footer--link-list">
+            <li><a href="#">Help</a></li>
+            <li><a href="#">Privacy and Terms</a></li>
+            <li><a href="https://www.flickr.com/photos/squeezyboy/4783544414/" target="_blank">Background image</a></li>
+          </ul>
+        </div>
+      </footer>
+
+
   </main>
-  <footer class="mdl-mega-footer">
-    <div class="mdl-mega-footer--middle-section">
-      <div class="mdl-mega-footer--drop-down-section">
-        <input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
-        <h1 class="mdl-mega-footer--heading">FAQ</h1>
-        <ul class="mdl-mega-footer--link-list">
-          <li><a href="#">Questions</a></li>
-          <li><a href="#">Answers</a></li>
-          <li><a href="#">Contact us</a></li>
-          <li>
-            <%= link_to('About', static_pages_about_path) %>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="mdl-mega-footer--bottom-section">
-      <div class="mdl-logo">
-        More Information
-      </div>
-      <ul class="mdl-mega-footer--link-list">
-        <li><a href="#">Help</a></li>
-        <li><a href="#">Privacy and Terms</a></li>
-        <li><a href="https://www.flickr.com/photos/squeezyboy/4783544414/" target="_blank">Background image</a></li>
-      </ul>
-    </div>
-  </footer>
+
 </div>
 </body>
 </html>
