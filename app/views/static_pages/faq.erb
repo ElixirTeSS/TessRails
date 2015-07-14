@@ -1,0 +1,45 @@
+<% provide(:title, "FAQ") %>
+
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--1dp">
+  <div class="mdl-card mdl-cell mdl-cell--12-col">
+    <div class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
+      <h4 class="mdl-cell mdl-cell--12-col">Frequently Asked Questions</h4>
+
+      <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+        <div class="section__circle-container__circle mdl-color--primary"></div>
+      </div>
+
+      <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+        <h5>Why isn't this site working</h5>
+        <p>This site is just a prototype, to give an example of a possible layout which might be used if the existing TeSS installation were to be converted to Ruby on Rails.</p>
+        <p>It may develop further functionality, but it is not meant for public use.</p>
+        <p>
+        <a href="https://tess.elixir-uk.org/" class="mdl-button">Go to TeSS</a>
+        </p>
+      </div>
+
+      <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+        <div class="section__circle-container__circle mdl-color--primary"></div>
+      </div>
+
+      <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+        <h5>So, where should I go instead?</h5>
+        <p>An FAQ for the live site is available at the link below.
+        <p>
+        <a href="https://tess.elixir-uk.org/about" class="mdl-button">TeSS FAQ</a></p>
+        </p>
+      </div>
+
+    </div>
+    <div class="mdl-card__actions">
+      <a href="<%= static_pages_home_url -%>" class="mdl-button" target="_blank">HOME</a>
+    </div>
+  </div>
+
+  <%= render :partial => 'layouts/loginmenu' -%>
+
+</section>
+
+<div class="mdl-layout-spacer">
+  <br/>
+</div>

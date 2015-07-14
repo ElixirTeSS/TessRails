@@ -27,27 +27,12 @@
 
     </div>
     <div class="mdl-card__actions">
-      <a href="#" class="mdl-button">Read the FAQ</a>
+      <a href="<%= static_pages_faq_url -%>" class="mdl-button" target="_blank">Read the FAQ</a>
     </div>
   </div>
-  <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn3">
-    <i class="material-icons">more_vert</i>
-  </button>
-  <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn3">
-    <% if user_signed_in? %>
-        <li class="mdl-menu__item">
-          <%= link_to('Logout', destroy_user_session_path, {:method => :delete, :class => 'mdl-navigation__link'}) %>
-        </li>
-    <% else %>
-        <li class="mdl-menu__item">
-          <%= link_to('Login', new_user_session_path, :class => 'mdl-navigation__link')  %>
-        </li>
-        <li class="mdl-menu__item">
-          <%= link_to('Register', new_user_registration_path, :class => 'mdl-navigation__link')  %>
-        </li>
-    <% end %>
-    <li class="mdl-menu__item" disabled>Suggest design changes</li>
-  </ul>
+
+  <%= render :partial => 'layouts/loginmenu' -%>
+
 </section>
 
 <section class="section--center mdl-grid  mdl-shadow--1dp">
