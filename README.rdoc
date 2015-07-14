@@ -1,28 +1,20 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+=== Note
 
-Things you may want to cover:
+This vesion is for demonstration purposes and is currently set up to use sqlite rather than a proper database. The live version is only so it can be shown to those who aren't able to run a version on their desktop.
 
-* Ruby version
+=== Installation
 
-* System dependencies
+The following steps are required:
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+  git clone git@github.com:ElixirUK/TessRails.git 
+  cd TessRails
+  rvm install ruby-2.2-head
+  rvm use --create 2.2-head@tessrails
+  gem install bundler
+  bundle install
+  rake db:create
+  rake db:migrate RAILS_ENV=development
+  
+...then take a look at http://localhost:3000
