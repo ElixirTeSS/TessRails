@@ -6,8 +6,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` on Rails 4+ applications as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '4d9b6b3bf758819cf93fb6ef848fe9dcd74228b1aa964771f6a6a84eb863c9b1412a2135f114ecfae527a1f804d8cfd4b7c2d2f9ae139c24ce4370f5984dccfb'
-  config.secret_key = '698656b208d4a74f88dca06d94c023dcf696e53a5ed0fc9fb8284bd4660e6fb087a0a505ec802f73fe093e05bddcf4ecbb1fc08f9b585af71702f06f89f3791c'
+  config.secret_key = '15ec7237ed3c4bcc83a4a91e2b6629eb90aa91062d9027b81f2ab35929bf467b221df086715281ca93f9ea2041a6f60b9cae0847fec992d214d703c99a4f48ef'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -32,7 +31,7 @@ Devise.setup do |config|
   # session. If you need permissions, you should implement that in a before filter.
   # You can also supply a hash where the value is a boolean determining whether
   # or not authentication should be aborted when the value is not present.
-  # config.authentication_keys = [:email]
+  config.authentication_keys = [:login]
 
   # Configure parameters from the request object used for authentication. Each entry
   # given should be a request method and it will automatically be passed to the
@@ -100,7 +99,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 10
 
   # Setup a pepper to generate the encrypted password.
-  # config.pepper = '0a3a6e93fecf9434b4c3917266679d2b9bee0a202cda484992be0e375a7217919a4ddb5c3d9eb60ba00ae7541db9a71358ebc7333474ab0436ba45b54e715644'
+  # config.pepper = 'd4808ea776aee829fc19652113f0e53acc9d8a1689e366217f3c67b48751523afade54b4056be183cebe9653ab39da63323adcdeca092550afc47169cd33111e'
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without
@@ -154,9 +153,6 @@ Devise.setup do |config|
   # The time you want to timeout the user session without activity. After this
   # time the user will be asked for credentials again. Default is 30 minutes.
   # config.timeout_in = 30.minutes
-
-  # If true, expires auth token on session timeout.
-  # config.expire_auth_token_on_timeout = false
 
   # ==> Configuration for :lockable
   # Defines which strategy will be used to lock an account.
