@@ -6,7 +6,8 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` on Rails 4+ applications as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = 'e914d6749c25af85e815b762f1cecb0efa9a557f6accbadca629cdba5e2a1d62f5d6c693e70d62218cd43ffa1e1c133c99fcaa15ad1e961ccb1bd0dab88fbc36'
+  # config.secret_key = '4d9b6b3bf758819cf93fb6ef848fe9dcd74228b1aa964771f6a6a84eb863c9b1412a2135f114ecfae527a1f804d8cfd4b7c2d2f9ae139c24ce4370f5984dccfb'
+  config.secret_key = '698656b208d4a74f88dca06d94c023dcf696e53a5ed0fc9fb8284bd4660e6fb087a0a505ec802f73fe093e05bddcf4ecbb1fc08f9b585af71702f06f89f3791c'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -31,7 +32,7 @@ Devise.setup do |config|
   # session. If you need permissions, you should implement that in a before filter.
   # You can also supply a hash where the value is a boolean determining whether
   # or not authentication should be aborted when the value is not present.
-  config.authentication_keys = [:email, :name]
+  # config.authentication_keys = [:email]
 
   # Configure parameters from the request object used for authentication. Each entry
   # given should be a request method and it will automatically be passed to the
@@ -43,7 +44,7 @@ Devise.setup do |config|
   # Configure which authentication keys should be case-insensitive.
   # These keys will be downcased upon creating or modifying a user and when used
   # to authenticate or find a user. Default is :email.
-  config.case_insensitive_keys = [:email, :name]
+  config.case_insensitive_keys = [:email]
 
   # Configure which authentication keys should have whitespace stripped.
   # These keys will have whitespace before and after removed upon creating or
@@ -99,7 +100,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 10
 
   # Setup a pepper to generate the encrypted password.
-  # config.pepper = 'ede988c2a847cd28cc995f8373422780f9d9daa44c2bcd5f7a93890a76e0ec1e7514ab2966bb17a82664286e594e171d894444915985e0c44fea12c78a2de131'
+  # config.pepper = '0a3a6e93fecf9434b4c3917266679d2b9bee0a202cda484992be0e375a7217919a4ddb5c3d9eb60ba00ae7541db9a71358ebc7333474ab0436ba45b54e715644'
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without

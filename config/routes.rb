@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   resources :content_providers
   resources :users
 
+  mount Upmin::Engine => '/admin'
+
   get 'static_pages/home'
   get 'static_pages/help'
   get 'static_pages/about'

@@ -10,6 +10,8 @@ gem 'jbuilder'
 gem 'sdoc'
 gem 'minitest-reporters'
 gem 'devise'
+gem 'upmin-admin', :github => 'upmin/upmin-admin-ruby', :ref => 'f036510b74'
+
 
 group :development, :test do
   gem 'sqlite3'
